@@ -1,0 +1,29 @@
+﻿@using School.Data
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("Admin"))
+    { 
+<div class="bg-white">
+    <div class="container ">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link " asp-area="" asp-controller="AdminContoller" asp-action="AddTeacher">AddTeacher</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " asp-area="" asp-controller="AdminContoller" asp-action="AddStudent">AddStudent</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="SchoolClasses" asp-action="Index">Classes</a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+       
+
+    }
+}

@@ -1,0 +1,21 @@
+﻿@model School.Models.SchoolClass
+
+
+
+
+@if (Model.StudentsSchool != null)
+{
+    @foreach (var student in Model.StudentsSchool)
+    {
+        <div class="card col-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Upload_free_image_notext.svg" class="card-img-top round" alt="...">
+            <div class="card-body border">
+                <h5 class="card-title">  @Html.DisplayFor(model => student.Student.DisplayName)</h5>
+                <p class="card-text"> @Html.DisplayNameFor(model => model.Students)</p>
+
+            </div>
+        </div>
+
+    }
+}
+

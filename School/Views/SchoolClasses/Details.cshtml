@@ -1,0 +1,36 @@
+﻿@model School.Models.SchoolClass
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="container  m-5">
+    <h2 class="mb-5"> @Html.DisplayFor(model => model.Id),  @string.Format("{0:yyyy/MM/dd}", Model.Year) </h2>
+
+    <partial name="_TeacherPartial" />
+
+    <div class="row mt-4">
+
+        <partial name="_StudentPartial" />
+
+
+    </div>
+
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+
+
+
+
